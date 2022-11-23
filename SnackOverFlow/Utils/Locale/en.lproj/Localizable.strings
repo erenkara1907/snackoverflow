@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  SnackOverFlow
+
+  Created by Eren Kara on 22.11.2022.
+  
+*/
+ 
+"signInFacebook"="Sign In with Facebook";
+"signInGoogle"="Sign In with Google";
+"signInApple"="Sign In with Apple";
+"signUpWithEmail"="Sign Up with Email";
+
+// Login
+"welcomeBack"="Welcome back!";
+"createAccount"="Create Account";
+"termsAndCondition"="By clicking \"Create account\", I agree to  SnackOverflow's [TOS](www.google.com) and [Privacy Policy](www.google.com)";
+
+// Button
+"getStarted"="Get Started";
+
+// General
+"emailHint"="Write your email";
+"passwordHint"="Write your password";
