@@ -9,40 +9,52 @@ import SwiftUI
 
 struct OnboardView: View {
     
-    @State private var currentIndex: Int = 0
+    @StateObject var onboardViewModel: OnboardViewModel = OnboardViewModel()
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                Spacer()
-                
-                TabView(selection: $currentIndex,
-                        content: {
-                    ForEach((0...OnboardModel.items.count - 1), id: \.self) { value in
-                        SliderCard(imageHeight: geometry.dynamicHeight(height: 0.45), model: OnboardModel.items[value])
-                    } // ForEach
-                }) // TabView
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .frame(height: geometry.dynamicHeight(height: 0.6))
-                
-                Spacer()
-                HStack {
-                    ForEach((0...2), id: \.self) { index in
-                        if(index == currentIndex) {
-                            IndicatorRectangle(width: geometry.dynamicWidth(width: 0.06))
-                                .foregroundColor(.colorClooney)
-                        } else {
-                            IndicatorRectangle(width: geometry.dynamicWidth(width: 0.02))
-                                .foregroundColor(.colorClooney).opacity(0.5)
+        NavigationView {
+            GeometryReader { geometry in
+                VStack {
+                    Spacer()
+                    
+                    TabView(selection: $onboardViewModel.currentIndex,
+                            content: {
+                        ForEach((0...OnboardModel.items.count - 1), id: \.self) { value in
+                            SliderCard(imageHeight: geometry.dynamicHeight(height: 0.45), model: OnboardModel.items[value])
+                        } // ForEach
+                    }) // TabView
+                    .tabViewStyle(.page(indexDisplayMode: .never))
+                    .frame(height: geometry.dynamicHeight(height: 0.6))
+                    
+                    Spacer()
+                    HStack {
+                        ForEach((0...2), id: \.self) { index in
+                            if(index == onboardViewModel.currentIndex) {
+                                IndicatorRectangle(width: geometry.dynamicWidth(width: 0.06))
+                                    .foregroundColor(.colorClooney)
+                            } else {
+                                IndicatorRectangle(width: geometry.dynamicWidth(width: 0.02))
+                                    .foregroundColor(.colorClooney).opacity(0.5)
+                            }
                         }
+                    } // HStack
+                    .frame(height: geometry.dynamicHeight(height: 0.01))
+                    
+                    NavigationLink(isActive: $onboardViewModel.isWelcomeRedirect) {
+                        WelcomeView()
+                            .navigationBarBackButtonHidden()
+                    } label: {
+                        NormalButton(onTap: {
+                            onboardViewModel.saveUserLoginAndRedirect()
+                        }, title: LocaleKeys.Button.getStarted.rawValue)
+                            .padding(.all, 16.0)
+                    } // NavigationLink
+                    .onAppear {
+                        onboardViewModel.checkUserFirstTime()
                     }
-                } // HStack
-                .frame(height: geometry.dynamicHeight(height: 0.01))
-                
-                NormalButton(onTap: {}, title: LocaleKeys.Button.getStarted.rawValue)
-                    .padding(.all, 16.0)
-            } // VStack
-        } // GeometryReader
+                } // VStack
+            } // GeometryReader
+        } // NavigationView
     }
 }
 

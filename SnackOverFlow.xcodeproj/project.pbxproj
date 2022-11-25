@@ -30,6 +30,8 @@
 		CE110185292CF3CA00CD7F9C /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE110184292CF3CA00CD7F9C /* OnboardView.swift */; };
 		CE110187292CF6AA00CD7F9C /* NormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE110186292CF6AA00CD7F9C /* NormalButton.swift */; };
 		CE110189292CFD8200CD7F9C /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE110188292CFD8200CD7F9C /* OnboardModel.swift */; };
+		CE924D492930A11600BEEE26 /* OnboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE924D482930A11600BEEE26 /* OnboardViewModel.swift */; };
+		CE924D4C2930A2F200BEEE26 /* UserCacheItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE924D4B2930A2F200BEEE26 /* UserCacheItems.swift */; };
 		CEEBE998292DF9030082C0E5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEBE997292DF9030082C0E5 /* LoginView.swift */; };
 		CEEBE99B292DFDE80082C0E5 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEBE99A292DFDE80082C0E5 /* TextFieldModifier.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		CE110184292CF3CA00CD7F9C /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		CE110186292CF6AA00CD7F9C /* NormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalButton.swift; sourceTree = "<group>"; };
 		CE110188292CFD8200CD7F9C /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
+		CE924D482930A11600BEEE26 /* OnboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewModel.swift; sourceTree = "<group>"; };
+		CE924D4B2930A2F200BEEE26 /* UserCacheItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCacheItems.swift; sourceTree = "<group>"; };
 		CEEBE997292DF9030082C0E5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CEEBE99A292DFDE80082C0E5 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +119,7 @@
 		CE11014F292CBB6600CD7F9C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CE924D4A2930A2D600BEEE26 /* Cache */,
 				CEEBE999292DFDC80082C0E5 /* ViewModifier */,
 				CE11017E292CE9DB00CD7F9C /* Fonts */,
 				CE11016B292CD69B00CD7F9C /* Locale */,
@@ -246,8 +251,17 @@
 			children = (
 				CE110184292CF3CA00CD7F9C /* OnboardView.swift */,
 				CE110188292CFD8200CD7F9C /* OnboardModel.swift */,
+				CE924D482930A11600BEEE26 /* OnboardViewModel.swift */,
 			);
 			path = Onboard;
+			sourceTree = "<group>";
+		};
+		CE924D4A2930A2D600BEEE26 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				CE924D4B2930A2F200BEEE26 /* UserCacheItems.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		CEEBE996292DF8EC0082C0E5 /* Login */ = {
@@ -353,11 +367,13 @@
 				CE110178292CE67300CD7F9C /* AppleButton.swift in Sources */,
 				CE11017B292CE80400CD7F9C /* ViewSize.swift in Sources */,
 				CE110156292CBBEE00CD7F9C /* WelcomeView.swift in Sources */,
+				CE924D4C2930A2F200BEEE26 /* UserCacheItems.swift in Sources */,
 				CE110182292CEEEC00CD7F9C /* DynamicSize+GeometryProxy.swift in Sources */,
 				CE110185292CF3CA00CD7F9C /* OnboardView.swift in Sources */,
 				CE110176292CDBAA00CD7F9C /* Radius.swift in Sources */,
 				CEEBE998292DF9030082C0E5 /* LoginView.swift in Sources */,
 				CE110142292CBAE300CD7F9C /* SnackOverFlowApp.swift in Sources */,
+				CE924D492930A11600BEEE26 /* OnboardViewModel.swift in Sources */,
 				CE110172292CD7CD00CD7F9C /* LocaleKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
